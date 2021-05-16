@@ -1,0 +1,54 @@
+.container {
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+h1 {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.table {
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000000;
+  color: #fff;
+}
+.table tr span {
+  display: flex;
+  color: red;
+  font-size: 0.8rem;
+}
+.table tr .green {
+  color: green;
+}
+.table td,
+th {
+  border: 1px dotted #ddd;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.table tr:nth-child(even) {
+  background-color: #ebebeb;
+  color: rgb(0, 0, 0);
+}
+.table tr:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
