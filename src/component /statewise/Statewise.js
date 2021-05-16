@@ -6,8 +6,13 @@ const Statewise = () => {
   const getCovidData = async () => {
     const res = await fetch('https://api.covid19india.org/data.json')
     const covidata = await res.json()
-    console.log(covidata)
-    setData(covidata.statewise)
+
+    const short = covidata.statewise
+    // console.log(short)
+    short.sort(function (a, b) {
+      return b - a
+    })
+    setData(short)
   }
 
   useEffect(() => {

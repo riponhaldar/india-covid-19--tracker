@@ -15,6 +15,7 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: auto;
+  cursor: pointer;
 }
 .table th {
   padding-top: 12px;
@@ -49,6 +50,43 @@ th {
 @media screen and (max-width: 991px) {
   .container {
     padding-right: 30px;
-    padding-left: 30px;
+    padding-left: 10px;
+  }
+  .table td {
+    font-size: 0.9rem;
+  }
+}
+
+/* end  */
+
+/* start try  */
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  position: relative;
+}
+.flex em {
+  font-size: 0.9rem;
+  color: red;
+}
+.flex span {
+  color: green;
+  font-size: 0.9rem;
+}
+.flex h3 {
+  font-weight: 600;
+}
+@media screen and (max-width: 991px) {
+  .flex {
+    padding: 20px 50px 0px 0px;
+    text-align: center;
+  }
+  .flex div {
+    margin-left: 10px;
+  }
+  .flex div h3 {
+    font-size: 1rem;
   }
 }
