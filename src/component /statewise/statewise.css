@@ -51,12 +51,12 @@ th {
   font-size: 1.1rem;
 }
 .table tr:nth-child(even) {
-  background-color: #5c9bff9b;
+  background-color: #cde0ff9b;
   color: rgb(0, 0, 0);
 }
 
 .table tr {
-  background-color: #ffffffe7;
+  background-color: #ffffff9b;
   color: rgb(0, 0, 0);
 }
 

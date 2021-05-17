@@ -40,7 +40,7 @@ em {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #b7d2ff;
+  background-color: #b7d1ff;
   color: rgb(0, 0, 0);
 }
 .table-light tr span {
@@ -68,11 +68,11 @@ th {
   font-size: 1.1rem;
 }
 .table-light tr:nth-child(even) {
-  background-color: #ffe1ffbc;
+  background-color: #fdd9fda1;
   color: rgb(0, 0, 0);
 }
 .table-light tr {
-  background-color: #fdbcfdb6;
+  background-color: #eda5ff81;
   color: rgb(0, 0, 0);
 }
 @media screen and (max-width: 991px) {

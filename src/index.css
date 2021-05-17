@@ -4,8 +4,9 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url('./130-COVID-Virus.png');
-  background-position: center;
+  /* background-image: url('./130-COVID-Virus.png'); */
+  background-image: url('./5386938.jpg');
+  background-position: center center;
 
   /* background-repeat: no-repeat; */
 }
@@ -40,7 +41,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: rgb(228, 150, 241);
+  color: rgb(16, 0, 85);
 }
 @media screen and (max-width: 991px) {
   .row {
