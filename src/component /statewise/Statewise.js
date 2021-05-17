@@ -10,9 +10,11 @@ const Statewise = () => {
 
       const short = covidata.statewise
       // console.log(short)
-      short.sort(function (a, b) {
-        return b - a
-      })
+      // short.sort(function (a, b) {
+      //   return b - a
+      // })
+      short.reverse()
+      short.pop()
       setData(short)
     }
     getCovidData()
@@ -21,14 +23,13 @@ const Statewise = () => {
   return (
     <>
       <div className='container'>
-        <h1> INDIA COVID-19</h1>
         <table className='table'>
           <tr>
             <th>state </th>
             <th>confirmed</th>
             <th>active</th>
             <th>recovered</th>
-            <th>deathe</th>
+            <th>deaths</th>
           </tr>
 
           <tbody>

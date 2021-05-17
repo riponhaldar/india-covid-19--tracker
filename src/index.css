@@ -3,28 +3,59 @@
   padding: 0;
   box-sizing: border-box;
 }
-.right {
+body {
+  background-image: url('./130-COVID-Virus.png');
+  background-position: center;
+
+  /* background-repeat: no-repeat; */
+}
+
+.row {
   display: flex;
-  margin-top: 20px;
+  margin-top: 5rem;
 }
 .chart {
   display: flex;
   width: 800px;
   padding-left: 20px;
   max-width: 900px;
-
   justify-content: center;
 }
+.footer p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  padding: 20px 0px 10px;
+}
+.footer ul {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.footer ul li {
+  list-style: none;
+  padding-right: 20px;
+  font-size: 2rem;
+}
+a {
+  text-decoration: none;
+  color: rgb(228, 150, 241);
+}
 @media screen and (max-width: 991px) {
-  .right {
+  .row {
     flex-wrap: wrap;
-    /* flex-direction: column-reverse; */
+    flex-direction: column-reverse;
   }
   .chart {
     /* flex-wrap: wrap; */
-    width: 550px;
+    width: 500px;
+    height: 300px;
     padding-left: 0px;
     margin-left: -40px;
     justify-content: center;
+  }
+  .footer p {
+    font-size: 0.9rem;
   }
 }
