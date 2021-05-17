@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import '../statewise.css'
+import './totalData.css'
 const Tryjs = () => {
   const [data, setData] = useState([])
 
   const getCovidData = async () => {
     const res = await fetch('https://api.covid19india.org/data.json')
+    // const res = await fetch(
+    //   'https://api.covid19india.org/v4/min/timeseries.min.json'
+    // )
     const covidata = await res.json()
-
     const slice = covidata.statewise[0]
     // console.log(slice)
-    // var cool = slice.pop()
-    // console.log(slice[0])
+
     setData(slice)
   }
 

@@ -3,26 +3,25 @@ import './statewise.css'
 const Statewise = () => {
   const [data, setData] = useState([])
 
-  const getCovidData = async () => {
-    const res = await fetch('https://api.covid19india.org/data.json')
-    const covidata = await res.json()
-
-    const short = covidata.statewise
-    // console.log(short)
-    short.sort(function (a, b) {
-      return b - a
-    })
-    setData(short)
-  }
-
   useEffect(() => {
+    const getCovidData = async () => {
+      const res = await fetch('https://api.covid19india.org/data.json')
+      const covidata = await res.json()
+
+      const short = covidata.statewise
+      // console.log(short)
+      short.sort(function (a, b) {
+        return b - a
+      })
+      setData(short)
+    }
     getCovidData()
   }, [])
 
   return (
     <>
       <div className='container'>
-        <h1> INDIA COCID19</h1>
+        <h1> INDIA COVID-19</h1>
         <table className='table'>
           <tr>
             <th>state </th>

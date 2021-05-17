@@ -1,11 +1,15 @@
 import Statewise from './component /statewise/Statewise'
-import Tryjs from './component /statewise/try'
+import StateData from './component /statewise2/StateData'
+import Tryjs from './component /totalData'
 
 function App() {
   return (
     <div className='App'>
       <Tryjs />
-      <Statewise />
+      <div className='right'>
+        <Statewise />
+        <StateData />
+      </div>
     </div>
   )
 }
