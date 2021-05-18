@@ -18,30 +18,29 @@ const Tryjs = () => {
   useEffect(() => {
     getCovidData()
   }, [])
-  
+
   return (
     <>
-      <div className='container'>
-        <div className='flex'>
-          <div>
-            <h3>active</h3>
-            <h4>{data.active}</h4>
-          </div>
-          <div>
-            <h3>confirmed</h3>
-            <em>+{data.deltaconfirmed}</em>
-            <h4>{data.confirmed}</h4>
-          </div>
-          <div>
-            <h3>recovered</h3>
-            <span>+{data.deltarecovered}</span>
-            <h4>{data.recovered}</h4>
-          </div>
-          <div>
-            <h3>deaths</h3>
-            <em>+{data.deltadeaths} </em>
-            <h4>{data.deaths}</h4>
-          </div>
+      <div className='flex'>
+        <div className='card'>
+          <h3>Active_case</h3>
+          <p>{data.active}</p>
+        </div>
+        <div className='card'>
+          <h3>Confirmed</h3>
+          <em>+{data.deltaconfirmed}</em>
+          <p>{data.confirmed}</p>
+        </div>
+
+        <div className='card'>
+          <h3>Recovered</h3>
+          <span>+{data.deltarecovered}</span>
+          <p>{data.recovered}</p>
+        </div>
+        <div className='card'>
+          <h3>Total_death</h3>
+          <em>+{data.deltadeaths} </em>
+          <p>{data.deaths}</p>
         </div>
       </div>
     </>

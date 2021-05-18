@@ -4,24 +4,47 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url('./130-COVID-Virus.png');
-  /* background-image: url('./5386938.jpg'); */
-  background-position: center center;
+  background-image: url('./3625655.jpg');
 
+  background-position: center center;
+  background-size: 100%;
   /* background-repeat: no-repeat; */
 }
-
+.container {
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+.loading {
+  text-align: center;
+  letter-spacing: 2px;
+}
+h1 {
+  text-shadow: 4px 6px 4px;
+  text-align: center;
+  font-size: 1.9rem;
+  color: rgb(5, 5, 41);
+  margin-top: 2rem;
+}
 .row {
   display: flex;
   margin-top: 5rem;
+  width: 100%;
 }
-.chart {
-  display: flex;
-  width: 800px;
-  padding-left: 20px;
-  max-width: 900px;
-  justify-content: center;
+.left {
+  width: 100%;
+  padding: 20px;
 }
+.right {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
 .footer p {
   text-align: center;
   font-size: 1.2rem;
@@ -44,17 +67,29 @@ a {
   color: rgb(16, 0, 85);
 }
 @media screen and (max-width: 991px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .row {
+    width: 100%;
     flex-wrap: wrap;
+    /* margin-top: 20 px; */
     flex-direction: column-reverse;
   }
-  .chart {
-    /* flex-wrap: wrap; */
-    width: 500px;
-    height: 300px;
-    padding-left: 0px;
-    margin-left: -40px;
-    justify-content: center;
+  .right {
+    border-radius: 10px;
+    padding: 0px;
+    background-color: rgba(255, 255, 255, 0.87);
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .left {
+    width: 100%;
+    padding: 0px;
+    margin-top: 20px;
   }
   .footer p {
     font-size: 0.9rem;

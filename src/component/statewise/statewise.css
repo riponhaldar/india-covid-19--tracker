@@ -1,0 +1,115 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th {
+  position: sticky;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+}
+.table tr span {
+  display: flex;
+  color: red;
+  font-size: 0.8rem;
+}
+
+.table tr .green {
+  color: rgb(0, 151, 20);
+}
+.table td,
+th {
+  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 8px;
+  font-weight: 600;
+  /* box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1); */
+  font-size: 1.2rem;
+}
+.table tr:nth-child(even) {
+  background-color: #dddddda8;
+  color: rgb(11, 0, 58);
+}
+.table tr {
+  background-color: #ffffff91;
+  color: rgb(11, 0, 58);
+}
+
+@media screen and (max-width: 691px) {
+  .table th {
+    text-align: left;
+    font-size: 0.8rem;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+}
+@media screen and (max-width: 684px) {
+  /* .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table td {
+    text-align: center;
+    border: 1px dotted #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 2px;
+    font-size: 1rem;
+  }
+  .table td span {
+    display: flex;
+    text-align: center;
+
+    font-size: 0.8rem;
+    justify-content: center;
+  }
+
+  .table tr .green {
+    color: rgb(0, 151, 20);
+  }
+*/
+}
+@media screen and (max-width: 684px) {
+  .table th {
+    display: none;
+  }
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    font-size: 0.9;
+    display: block;
+  }
+  .table tr:nth-child(even) {
+    background-color: #c7efffc0;
+    color: rgb(0, 0, 0);
+  }
+  .table tr {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: rgba(255, 255, 255, 0.664);
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+  }
+  .table tbody td {
+    border-bottom: 1px solid rgb(172, 172, 172);
+    text-align: right;
+    padding-left: 50%;
+
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    color: darkblue;
+    padding-left: 15px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: left;
+  }
+}
+/* end  */
+
+/* start try  */

@@ -1,0 +1,87 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+  /* background-color: silver; */
+  margin-top: 30px;
+  position: relative;
+  padding: 20px 90px;
+  z-index: 1;
+}
+.card {
+  padding: 40px 50px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px;
+
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.808);
+
+  transition: 0.3s all;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+}
+.card h3 {
+  font-size: 1.5rem;
+  color: darkblue;
+  padding-bottom: 30px;
+  text-align: center;
+  justify-content: center;
+}
+.card em {
+  font-weight: 600;
+  color: red;
+}
+.card span {
+  font-weight: 600;
+  color: green;
+}
+.card p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 10px;
+}
+@media screen and (max-width: 991px) {
+  .flex {
+    padding: 20px 50px;
+    flex-wrap: wrap;
+    margin-top: 0px;
+  }
+}
+@media screen and (max-width: 684px) {
+  .flex {
+    flex-wrap: wrap;
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 50px 20px;
+    margin: 10px 4px;
+  }
+  .card h3 {
+    font-size: 1.2rem;
+    padding-bottom: 25px;
+  }
+  .card p {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 384px) {
+  .flex {
+    flex-wrap: wrap;
+    padding: 20px 10px;
+  }
+
+  .card {
+    padding: 40px 20px;
+    margin: 10px 1px;
+  }
+  .card h3 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 1rem;
+  }
+}
