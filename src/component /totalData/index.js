@@ -18,7 +18,7 @@ const Tryjs = () => {
   useEffect(() => {
     getCovidData()
   }, [])
-
+  
   return (
     <>
       <div className='container'>

@@ -33,6 +33,7 @@ h1 {
 }
 .table tr {
   transition: 0.5s all;
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
 }
 .table tr:hover {
   transform: translateY(-5px);
@@ -51,12 +52,12 @@ th {
   font-size: 1.1rem;
 }
 .table tr:nth-child(even) {
-  background-color: #cde0ff9b;
+  background-color: #ffffffd0;
   color: rgb(0, 0, 0);
 }
 
 .table tr {
-  background-color: #ffffff9b;
+  background-color: #ffd6d6c7;
   color: rgb(0, 0, 0);
 }
 

@@ -1,3 +1,4 @@
+import BarChat from './component /BarChart/BarChat'
 import Footer from './component /Footer'
 import Statewise from './component /statewise/Statewise'
 import StateData from './component /statewise2/StateData'
@@ -9,6 +10,7 @@ function App() {
       <div className='bg-img'></div>
       <h1> COVID19INDIA</h1>
       <Tryjs />
+
       <div className='row'>
         <Statewise />
         <StateData />
