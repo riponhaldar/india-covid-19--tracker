@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Line, Bar } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import './barchat.css'
 import Loading from '../../Loading'
 // Animation
@@ -8,6 +8,7 @@ import Loading from '../../Loading'
 const BarChat = () => {
   const [chartData, setChartData] = useState({})
   const [chartDeath, setchartDeath] = useState({})
+  const [chartReco, setchartReco] = useState({})
   const [loding, setLoading] = useState(true)
   const chart = () => {
     let empDate = []
@@ -21,7 +22,7 @@ const BarChat = () => {
       const chart = result.data.cases_time_series
 
       // 'ARRAY 1: ' + arr1.slice(1).slice(-5) + '<br/>ARRAY 2: '
-      var chek = chart.slice(1).slice(-14)
+      var chek = chart.slice(1).slice(-7)
       console.log(chek)
 
       for (const data of chek) {
@@ -40,20 +41,26 @@ const BarChat = () => {
         type: 'bar',
         datasets: [
           {
-            label: 'last 14Days Confrim',
+            label: 'last 7Days Confrim',
             data: empConf,
             tension: 0.4,
-            backgroundColor: ['red'],
-            borderColor: ['red'],
+            backgroundColor: ['rgb(0, 89, 255)'],
+            borderColor: ['rgb(0, 89, 255)'],
             color: ['#000'],
             borderWidth: 1,
           },
+        ],
+      })
+      setchartReco({
+        labels: empDate,
+        type: 'bar',
+        datasets: [
           {
-            label: 'last 14Days recover',
+            label: 'last 7Days Recover',
             data: empReco,
             tension: 0.6,
-            backgroundColor: ['green'],
-            borderColor: ['green'],
+            backgroundColor: [' rgb(0, 255, 34)'],
+            borderColor: [' rgb(0, 255, 34)'],
             color: ['#000'],
             borderWidth: 1,
           },
@@ -64,7 +71,7 @@ const BarChat = () => {
         type: 'bar',
         datasets: [
           {
-            label: 'last 14Days death',
+            label: 'last 7Days Death',
             data: empDath,
             borderColor: ['red'],
             backgroundColor: ['red'],
@@ -92,69 +99,104 @@ const BarChat = () => {
   }
   return (
     <>
-      <div className='chart1'>
-        <Line
-          data={chartData}
-          // width={400}
-          // height={200}
-          options={{
-            responsive: true,
-            title: { text: 'daliy confrimd SCALE', display: true },
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    beginAtZero: true,
+      <div className='chart-container'>
+        <div className='chart1'>
+          <Line
+            data={chartReco}
+            // width={400}
+            // height={200}
+            options={{
+              responsive: true,
+              title: { text: 'daliy confrimd SCALE', display: true },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      autoSkip: true,
+                      maxTicksLimit: 10,
+                      beginAtZero: true,
+                    },
+                    gridLines: {
+                      display: false,
+                    },
                   },
-                  gridLines: {
-                    display: false,
+                ],
+                xAxes: [
+                  {
+                    gridLines: {
+                      display: false,
+                    },
                   },
-                },
-              ],
-              xAxes: [
-                {
-                  gridLines: {
-                    display: false,
+                ],
+              },
+            }}
+          />
+        </div>
+        <div className='chart2'>
+          <Line
+            data={chartData}
+            // width={400}
+            // height={200}
+            options={{
+              responsive: true,
+              title: { text: 'daliy confrimd SCALE', display: true },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      autoSkip: true,
+                      maxTicksLimit: 10,
+                      beginAtZero: true,
+                    },
+                    gridLines: {
+                      display: false,
+                    },
                   },
-                },
-              ],
-            },
-          }}
-        />
-      </div>
-      <div className='chart2'>
-        <Line
-          data={chartDeath}
-          // width={400}
-          // height={200}
-          options={{
-            responsive: true,
-            title: { text: 'daliy confrimd SCALE', display: true },
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    autoSkip: true,
-                    maxTicksLimit: 10,
-                    beginAtZero: true,
+                ],
+                xAxes: [
+                  {
+                    gridLines: {
+                      display: false,
+                    },
                   },
-                  gridLines: {
-                    display: false,
+                ],
+              },
+            }}
+          />
+        </div>
+
+        <div className='chart3'>
+          <Line
+            data={chartDeath}
+            // width={400}
+            // height={200}
+            options={{
+              responsive: true,
+              title: { text: 'daliy confrimd SCALE', display: true },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      autoSkip: true,
+                      maxTicksLimit: 10,
+                      beginAtZero: true,
+                    },
+                    gridLines: {
+                      display: false,
+                    },
                   },
-                },
-              ],
-              xAxes: [
-                {
-                  gridLines: {
-                    display: false,
+                ],
+                xAxes: [
+                  {
+                    gridLines: {
+                      display: false,
+                    },
                   },
-                },
-              ],
-            },
-          }}
-        />
+                ],
+              },
+            }}
+          />
+        </div>
       </div>
     </>
   )

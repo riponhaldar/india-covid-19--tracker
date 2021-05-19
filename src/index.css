@@ -4,13 +4,10 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url('./3625655.jpg');
-
-  background-position: center center;
-  background-size: 100%;
-  /* background-repeat: no-repeat; */
+  background-color: rgba(0, 0, 0, 0.897);
 }
 .container {
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
   z-index: 1;
   width: 100%;
   max-width: 1600px;
@@ -24,18 +21,23 @@ body {
   letter-spacing: 2px;
 }
 h1 {
-  text-shadow: 4px 6px 4px;
   text-align: center;
   font-size: 1.9rem;
-  color: rgb(5, 5, 41);
-  margin-top: 2rem;
+  color: rgb(90, 90, 90);
+  /* margin-top: 2rem; */
+  padding-top: 2rem;
 }
+h1 span {
+  color: blue;
+}
+
 .row {
   display: flex;
   margin-top: 5rem;
   width: 100%;
 }
 .left {
+  border-radius: 10px;
   width: 100%;
   padding: 20px;
 }
@@ -48,7 +50,7 @@ h1 {
 .footer p {
   text-align: center;
   font-size: 1.2rem;
-  color: rgb(0, 0, 0);
+  color: rgb(55, 0, 235);
   font-weight: 800;
   padding: 20px 0px 10px;
 }
@@ -64,7 +66,7 @@ h1 {
 }
 a {
   text-decoration: none;
-  color: rgb(16, 0, 85);
+  color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 991px) {
   .container {
@@ -72,17 +74,16 @@ a {
     padding-left: 20px;
   }
   .row {
+    margin-top: 3rem;
     width: 100%;
     flex-wrap: wrap;
-    /* margin-top: 20 px; */
     flex-direction: column-reverse;
   }
   .right {
     border-radius: 10px;
     padding: 0px;
-    background-color: rgba(255, 255, 255, 0.87);
-    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.9);
+    margin-top: 0px;
     margin-bottom: 20px;
   }
 

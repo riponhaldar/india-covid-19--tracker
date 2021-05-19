@@ -43,19 +43,19 @@ const Statewise = () => {
           {data.map((curElem, ind) => {
             return (
               <tr>
-                <td data-label='state'>{curElem.state}</td>
-                <td data-label='confirmed'>
+                <td data-label='State'>{curElem.state}</td>
+                <td data-label='Confirmed'>
                   <span> +{curElem.deltaconfirmed}</span>
                   {curElem.confirmed}
                 </td>
-                <td data-label='active'>{curElem.active}</td>
+                <td data-label='Active'>{curElem.active}</td>
 
-                <td data-label='recovered'>
+                <td data-label='Recovered'>
                   <span className='green'> +{curElem.deltarecovered}</span>
                   {curElem.recovered}
                 </td>
 
-                <td data-label='deaths'>
+                <td data-label='Deaths'>
                   <span> +{curElem.deltadeaths}</span>
                   {curElem.deaths}
                 </td>

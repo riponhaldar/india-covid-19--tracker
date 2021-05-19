@@ -7,7 +7,9 @@ const Home = () => {
     <>
       <div className='container'>
         <div className='Name'>
-          <h1> COVID-19 INDIA</h1>
+          <h1>
+            COVID-19 <span>INDIA</span>
+          </h1>
         </div>
 
         <Tryjs />

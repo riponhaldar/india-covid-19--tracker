@@ -17,25 +17,29 @@
 }
 
 .table tr .green {
-  color: rgb(0, 151, 20);
+  color: rgb(0, 255, 34);
+}
+.table tr {
+  color: #fff;
 }
 .table td,
 th {
-  border: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
+  border-bottom: 1px solid rgb(88, 88, 88);
   padding: 8px;
+
   font-weight: 600;
   /* box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1); */
   font-size: 1.2rem;
 }
-.table tr:nth-child(even) {
+/* .table tr:nth-child(even) {
   background-color: #dddddda8;
   color: rgb(11, 0, 58);
 }
 .table tr {
   background-color: #ffffff91;
   color: rgb(11, 0, 58);
-}
+} */
 
 @media screen and (max-width: 691px) {
   .table th {
@@ -67,8 +71,7 @@ th {
 
   .table tr .green {
     color: rgb(0, 151, 20);
-  }
-*/
+  } */
 }
 @media screen and (max-width: 684px) {
   .table th {
@@ -82,20 +85,19 @@ th {
     display: block;
   }
   .table tr:nth-child(even) {
-    background-color: #c7efffc0;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 119, 255);
   }
   .table tr {
+    color: rgb(0, 195, 255);
     border-radius: 10px;
-    margin-bottom: 15px;
-    background-color: rgba(255, 255, 255, 0.664);
-    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+
+    /* background-color: rgba(0, 0, 0, 0.918); */
+    box-shadow: 0px 20px 25px 0px rgba(0, 0, 0, 0.9);
   }
   .table tbody td {
-    border-bottom: 1px solid rgb(172, 172, 172);
     text-align: right;
     padding-left: 50%;
-
     position: relative;
   }
   .table td::before {
@@ -103,10 +105,11 @@ th {
     position: absolute;
     left: 0;
     width: 50%;
-    color: darkblue;
+    color: rgb(160, 160, 160);
     padding-left: 15px;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
     text-align: left;
   }
 }

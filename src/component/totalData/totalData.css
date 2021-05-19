@@ -7,15 +7,15 @@
   padding: 20px 90px;
   z-index: 1;
 }
+
 .card {
   padding: 40px 50px;
   border-radius: 10px;
   cursor: pointer;
   margin: 10px;
-
-  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.808);
-
+  position: relative;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   transition: 0.3s all;
 }
 .card:hover {
@@ -24,20 +24,21 @@
 }
 .card h3 {
   font-size: 1.5rem;
-  color: darkblue;
+  color: rgb(160, 160, 160);
   padding-bottom: 30px;
   text-align: center;
   justify-content: center;
 }
 .card em {
   font-weight: 600;
-  color: red;
+  color: #ff0808;
 }
 .card span {
   font-weight: 600;
-  color: green;
+  color: rgb(0, 255, 34);
 }
 .card p {
+  color: rgb(0, 89, 255);
   font-size: 1.2rem;
   font-weight: 600;
   padding-top: 10px;

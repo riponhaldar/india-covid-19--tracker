@@ -23,10 +23,11 @@ const Tryjs = () => {
     <>
       <div className='flex'>
         <div className='card'>
-          <h3>Active_case</h3>
+          <h3>ActiveCase</h3>
           <p>{data.active}</p>
         </div>
-        <div className='card'>
+        <div className='card card-img'>
+          {/* <div className='card-img'> </div> */}
           <h3>Confirmed</h3>
           <em>+{data.deltaconfirmed}</em>
           <p>{data.confirmed}</p>
@@ -38,7 +39,7 @@ const Tryjs = () => {
           <p>{data.recovered}</p>
         </div>
         <div className='card'>
-          <h3>Total_death</h3>
+          <h3>TotalDeath</h3>
           <em>+{data.deltadeaths} </em>
           <p>{data.deaths}</p>
         </div>
