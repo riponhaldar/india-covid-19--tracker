@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Line } from 'react-chartjs-2'
-import './barchat.css'
+
 import Loading from '../../Loading'
 // Animation
 
@@ -36,21 +36,6 @@ const BarChat = () => {
       //   empAge.push(date.dailyconfirmed)
       // }
 
-      setChartData({
-        labels: empDate,
-        type: 'bar',
-        datasets: [
-          {
-            label: 'last 7Days Confrim',
-            data: empConf,
-            tension: 0.4,
-            backgroundColor: ['rgb(0, 89, 255)'],
-            borderColor: ['rgb(0, 89, 255)'],
-            color: ['#000'],
-            borderWidth: 1,
-          },
-        ],
-      })
       setchartReco({
         labels: empDate,
         type: 'bar',
@@ -64,12 +49,15 @@ const BarChat = () => {
             color: ['#000'],
             borderWidth: 1,
           },
-        ],
-      })
-      setchartDeath({
-        labels: empDate,
-        type: 'bar',
-        datasets: [
+          {
+            label: 'last 7Days Confrim',
+            data: empConf,
+            tension: 0.4,
+            backgroundColor: ['rgb(0, 89, 255)'],
+            borderColor: ['rgb(0, 89, 255)'],
+            color: ['#000'],
+            borderWidth: 1,
+          },
           {
             label: 'last 7Days Death',
             data: empDath,
@@ -102,6 +90,7 @@ const BarChat = () => {
     <>
       <div className='chart-container'>
         <div className='chart1'>
+          <h3>India chart</h3>
           <Line
             data={chartReco}
             // width={400}
@@ -133,11 +122,10 @@ const BarChat = () => {
             }}
           />
         </div>
-        <div className='chart2'>
+        {/* <div className='chart2'>
           <Line
             data={chartData}
-            // width={400}
-            // height={200}
+           
             options={{
               responsive: true,
               title: { text: 'daliy confrimd SCALE', display: true },
@@ -164,13 +152,12 @@ const BarChat = () => {
               },
             }}
           />
-        </div>
+        </div> */}
 
-        <div className='chart3'>
+        {/* <div className='chart3'>
           <Line
             data={chartDeath}
-            // width={400}
-            // height={200}
+         
             options={{
               responsive: true,
               title: { text: 'daliy confrimd SCALE', display: true },
@@ -197,7 +184,7 @@ const BarChat = () => {
               },
             }}
           />
-        </div>
+        </div> */}
       </div>
     </>
   )

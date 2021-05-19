@@ -7,7 +7,6 @@ body {
   background-color: rgba(0, 0, 0, 0.897);
 }
 .container {
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
   z-index: 1;
   width: 100%;
   max-width: 1600px;
@@ -19,16 +18,6 @@ body {
 .loading {
   text-align: center;
   letter-spacing: 2px;
-}
-h1 {
-  text-align: center;
-  font-size: 1.9rem;
-  color: rgb(90, 90, 90);
-  /* margin-top: 2rem; */
-  padding-top: 2rem;
-}
-h1 span {
-  color: blue;
 }
 
 .row {
