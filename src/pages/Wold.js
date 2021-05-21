@@ -36,10 +36,10 @@ const Wold = () => {
 
   if (loading) {
     return (
-      <main>
+      <div className='container'>
         {error && <p>{error}.....</p>}
         <Loading />
-      </main>
+      </div>
     )
   }
   return (

@@ -3,18 +3,29 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import DarkMode from '../Darkmode/DarkMode'
 const Navbar = () => {
+  // navbar scroll
+  var prevScrollpos = window.pageYOffset
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset
+    if (prevScrollpos > currentScrollPos) {
+      document.querySelector('Nav').style.top = '0'
+    } else {
+      document.querySelector('Nav').style.top = '-130px'
+    }
+    prevScrollpos = currentScrollPos
+  }
   return (
     <>
-      <Logo>
-        <h1>
-          <em>COVID</em>-19 <span>LIVE </span>
-        </h1>
-        <div>
-          <DarkMode />
-        </div>
-      </Logo>
-
       <Nav>
+        <Logo>
+          <h1>
+            <em>COVID</em>-19 <span>LIVE </span>
+          </h1>
+          <div>
+            <DarkMode />
+          </div>
+        </Logo>
+
         <NavMenu>
           <NavItem>
             <NavLinks className='nav_link' to='/' data-text='Home'>
@@ -78,6 +89,7 @@ export const Logo = styled.div`
 `
 export const Nav = styled.nav`
   text-align: center;
+
   justify-content: center;
 `
 export const NavMenu = styled.ul`
