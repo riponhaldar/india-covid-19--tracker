@@ -152,15 +152,15 @@ export const Covid_case = styled.div`
   cursor: pointer;
   margin: 10px;
   position: relative;
-  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 10px 15px 1px rgba(0, 0, 0, 0.3);
   /* background-color: #fff; */
   margin-right: 1rem;
   p {
     color: rgb(160, 160, 160);
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     padding-bottom: 30px;
     text-align: center;
-
+    font-weight: 600;
     justify-content: center;
   }
   span {
@@ -188,7 +188,7 @@ export const Covid_case = styled.div`
     margin-right: 1rem;
     text-align: center;
     p {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       padding-bottom: 5px;
     }
   }
