@@ -1,29 +1,43 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../../Loading'
 import './statewise.css'
+
 const Statewise = () => {
   const [data, setData] = useState([])
   const [loding, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
   useEffect(() => {
     const getCovidData = async () => {
-      const res = await fetch('https://api.covid19india.org/data.json')
-      const covidata = await res.json()
-
-      const short = covidata.statewise
-      // console.log(short)
-      // short.sort(function (a, b) {
-      //   return b - a
-      // })
-      short.reverse()
-      short.pop()
-      setData(short)
-      setLoading(false)
+      await fetch('https://api.covid19india.org/data.json')
+        .then((res) => {
+          // console.log(res)
+          if (!res.ok) {
+            throw Error('could not fetch the data')
+          }
+          return res.json()
+        })
+        .then((data) => {
+          // console.log(data)
+          const short = data.statewise
+          short.reverse()
+          short.pop()
+          // console.log(short)
+          setData(short)
+          setLoading(false)
+          setError(null)
+        })
+        .catch((err) => {
+          setError(err.message)
+        })
     }
     getCovidData()
   }, [])
+
   if (loding) {
     return (
       <main>
+        {error && <p>{error}......</p>}
         <Loading />
       </main>
     )

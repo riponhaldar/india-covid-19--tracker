@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
 import Loading from '../Loading'
 
 const Wold = () => {
   const [worldChart, setWorldChart] = useState({})
   const [country, setCountry] = useState([])
   const [loading, setLoading] = useState({})
+  const [error, setError] = useState(null)
   useEffect(() => {
     const getCovidData = async () => {
-      const res = await fetch('https://api.covid19api.com/summary')
-      const covidata = await res.json()
-      console.log(covidata)
-      var golobal = covidata.Global
-
-      var country = covidata.Countries
-
-      setWorldChart(golobal)
-      setLoading(false)
-      setCountry(country)
+      await fetch('https://api.covid19api.com/summary')
+        .then((res) => {
+          console.log(res)
+          if (!res.ok) {
+            throw Error('could not fetch the data')
+          }
+          return res.json()
+        })
+        .then((data) => {
+          console.log(data)
+          var golobal = data.Global
+          var country = data.Countries
+          console.log(golobal)
+          setWorldChart(golobal)
+          setLoading(false)
+          setCountry(country)
+          setError(null)
+        })
+        .catch((err) => {
+          setError(err.message)
+        })
     }
     getCovidData()
   }, [])
@@ -26,6 +37,7 @@ const Wold = () => {
   if (loading) {
     return (
       <main>
+        {error && <p>{error}.....</p>}
         <Loading />
       </main>
     )

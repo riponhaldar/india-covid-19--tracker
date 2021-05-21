@@ -10,100 +10,102 @@ const BarChat = () => {
   const [chartDeath, setchartDeath] = useState({})
   const [chartReco, setchartReco] = useState({})
   const [loding, setLoading] = useState(true)
-  const chart = () => {
-    let empDate = []
-    let empConf = []
-    let empDath = []
-    let empReco = []
+  const [error, setError] = useState(null)
+  useEffect(() => {
+    const chart = async () => {
+      let empDate = []
+      let empConf = []
+      let empDath = []
+      let empReco = []
+      await fetch('https://api.covid19india.org/data.json')
+        .then((res) => {
+          if (!res.ok) {
+            throw Error('could not fetch the data')
+          }
+          return res.json()
+        })
+        .then((data) => {
+          const chart = data.cases_time_series
+          var chek = chart.slice(1).slice(-7)
 
-    const fetchIems = async () => {
-      const result = await axios('https://api.covid19india.org/data.json')
+          for (const data of chek) {
+            empDate.push(data.date)
+            empConf.push(data.dailyconfirmed)
+            empDath.push(data.dailydeceased)
+            empReco.push(data.dailyrecovered)
+          }
+          setChartData({
+            labels: empDate,
+            type: 'bar',
+            datasets: [
+              {
+                label: 'last 7Days Confrim',
+                data: empConf,
+                tension: 0.4,
+                backgroundColor: ['rgb(0, 89, 255)'],
+                borderColor: ['rgb(0, 89, 255)'],
+                color: ['#000'],
+                borderWidth: 1,
+              },
+            ],
+          })
+          setchartReco({
+            labels: empDate,
+            type: 'bar',
+            datasets: [
+              {
+                label: 'last 7Days Recover',
+                data: empReco,
+                tension: 0.6,
+                backgroundColor: [' rgb(0, 255, 34)'],
+                borderColor: [' rgb(0, 255, 34)'],
+                color: ['#000'],
+                borderWidth: 1,
+              },
+            ],
+          })
+          setchartDeath({
+            labels: empDate,
+            type: 'bar',
+            datasets: [
+              {
+                label: 'last 7Days Death',
+                data: empDath,
+                borderColor: ['red'],
+                backgroundColor: ['red'],
+                tension: 0.6,
+                color: ['#000'],
+                borderWidth: 1,
+              },
+            ],
+          })
 
-      const chart = result.data.cases_time_series
-
-      // 'ARRAY 1: ' + arr1.slice(1).slice(-5) + '<br/>ARRAY 2: '
-      var chek = chart.slice(1).slice(-7)
-      // console.log(chek)
-
-      for (const data of chek) {
-        empDate.push(data.date)
-        empConf.push(data.dailyconfirmed)
-        empDath.push(data.dailydeceased)
-        empReco.push(data.dailyrecovered)
-      }
-      // for (const date of chart.cases_time_series) {
-      //   empSal.push(date.date)
-      //   empAge.push(date.dailyconfirmed)
-      // }
-
-      setChartData({
-        labels: empDate,
-        type: 'bar',
-        datasets: [
-          {
-            label: 'last 7Days Confrim',
-            data: empConf,
-            tension: 0.4,
-            backgroundColor: ['rgb(0, 89, 255)'],
-            borderColor: ['rgb(0, 89, 255)'],
-            color: ['#000'],
-            borderWidth: 1,
-          },
-        ],
-      })
-      setchartReco({
-        labels: empDate,
-        type: 'bar',
-        datasets: [
-          {
-            label: 'last 7Days Recover',
-            data: empReco,
-            tension: 0.6,
-            backgroundColor: [' rgb(0, 255, 34)'],
-            borderColor: [' rgb(0, 255, 34)'],
-            color: ['#000'],
-            borderWidth: 1,
-          },
-        ],
-      })
-      setchartDeath({
-        labels: empDate,
-        type: 'bar',
-        datasets: [
-          {
-            label: 'last 7Days Death',
-            data: empDath,
-            borderColor: ['red'],
-            backgroundColor: ['red'],
-            tension: 0.6,
-            color: ['#000'],
-            borderWidth: 1,
-          },
-        ],
-      })
+          setLoading(false)
+        })
+        .catch((err) => {
+          setError(err.message)
+        })
+      setLoading(false)
     }
 
-    fetchIems()
-  }
-
-  useEffect(() => {
     chart()
-    setLoading(false)
   }, [])
 
   if (loding) {
     return (
       <main>
+        {error && <div>{error}......</div>}
         <Loading />
       </main>
     )
   }
+
   return (
     <>
       <div className='chart-container'>
         <div className='chart'>
           <Line
-            data={chartReco}
+            data={chartData}
             // width={400}
             // height={200}
             options={{
@@ -133,9 +135,10 @@ const BarChat = () => {
             }}
           />
         </div>
+
         <div className='chart'>
           <Line
-            data={chartData}
+            data={chartReco}
             // width={400}
             // height={200}
             options={{
