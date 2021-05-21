@@ -1,29 +1,29 @@
 .flex {
   display: flex;
   justify-content: space-between;
-  /* background-color: silver; */
-  margin-top: 30px;
-  position: relative;
-  padding: 20px 90px;
+  margin-top: 2rem;
+  padding: 0 10rem;
   z-index: 1;
+  width: 100%;
 }
-
+/* color: rgb(139, 140, 209);
+color: rgb(194, 195, 219); */
 .card {
-  padding: 40px 50px;
+  padding: 40px 20px;
   border-radius: 10px;
   cursor: pointer;
   margin: 10px;
   position: relative;
-  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 5px 20px 10px 1px rgba(0, 0, 0, 0.3); */
   background-color: rgba(0, 0, 0, 0);
-  transition: 0.3s all;
+  transition: 0.33s all;
 }
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 3px 15px 25px 0px rgba(0, 0, 0, 0.3); */
+  box-shadow: 5px 15px 10px 1px rgba(0, 0, 0, 0.3);
 }
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgb(160, 160, 160);
   padding-bottom: 30px;
   text-align: center;
@@ -31,7 +31,7 @@
 }
 .card em {
   font-weight: 600;
-  color: #ff0808;
+  color: #ff0000a2;
 }
 .card span {
   font-weight: 600;
@@ -47,16 +47,17 @@
   .flex {
     padding: 20px 50px;
     flex-wrap: wrap;
-    margin-top: 0px;
+    margin: 0px;
   }
 }
 @media screen and (max-width: 684px) {
   .flex {
     flex-wrap: wrap;
-    padding: 20px 10px;
+    padding: 10px 10px;
   }
 
   .card {
+    box-shadow: 3px 10px 15px 1px rgba(0, 0, 0, 0.3);
     padding: 50px 20px;
     margin: 10px 4px;
   }

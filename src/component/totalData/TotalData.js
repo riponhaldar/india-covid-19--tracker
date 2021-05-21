@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './totalData.css'
-const Tryjs = () => {
+const TotalData = () => {
   const [data, setData] = useState([])
 
   const getCovidData = async () => {
@@ -48,4 +48,4 @@ const Tryjs = () => {
   )
 }
 
-export default Tryjs
+export default TotalData

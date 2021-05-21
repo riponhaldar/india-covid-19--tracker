@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import Loading from '../Loading'
-import IndiaChart from '../component/World/IndiaChart'
-import UsChart from '../component/World/UsChart'
+
 const Wold = () => {
   const [worldChart, setWorldChart] = useState({})
   const [country, setCountry] = useState([])
@@ -12,11 +11,11 @@ const Wold = () => {
     const getCovidData = async () => {
       const res = await fetch('https://api.covid19api.com/summary')
       const covidata = await res.json()
+      console.log(covidata)
       var golobal = covidata.Global
 
       var country = covidata.Countries
 
-      // console.log(country)
       setWorldChart(golobal)
       setLoading(false)
       setCountry(country)
@@ -83,10 +82,7 @@ const Wold = () => {
               </tbody>
             </Table>
           </Table_container>
-          <Chart_contaner>
-            {/* <IndiaChart /> */}
-            {/* <UsChart /> */}
-          </Chart_contaner>
+          <Chart_contaner></Chart_contaner>
         </World_container>
       </div>
     </>
@@ -121,6 +117,7 @@ export const Name = styled.div`
     color: rgb(90, 90, 90);
     /* margin-top: 2rem; */
     padding-top: 2rem;
+
     span {
       color: blue;
     }
@@ -159,11 +156,11 @@ export const Covid_case = styled.div`
   /* background-color: #fff; */
   margin-right: 1rem;
   p {
-    color: rgb(90, 90, 90);
+    color: rgb(160, 160, 160);
     font-size: 1.8rem;
     padding-bottom: 30px;
     text-align: center;
-    font-weight: 500;
+
     justify-content: center;
   }
   span {
@@ -174,7 +171,7 @@ export const Covid_case = styled.div`
     padding-top: 10px;
   }
   h4 {
-    color: red;
+    color: #f13c3cc5;
     font-size: 1.2rem;
     letter-spacing: 2px;
     font-weight: 600;
@@ -203,22 +200,24 @@ export const Table_container = styled.div`
   width: 100%;
   padding: 0px;
   justify-content: center;
-  color: rgb(90, 90, 90);
+  /* color: rgb(90, 90, 90); */
+  color: rgb(139, 140, 209);
 `
 export const Table = styled.table`
   th {
     position: sticky;
     padding-top: 12px;
     padding-bottom: 12px;
+    border-radius: 5px 5px 5px 5px;
     text-align: left;
-    background-color: #000000;
-    color: rgb(255, 255, 255);
+    background-color: #000;
+    color: rgb(194, 195, 219);
   }
   td,
   th {
     border-bottom: 1px solid rgb(88, 88, 88);
     padding: 8px;
-
+    border-radius: 5px 5px 5px 5px;
     font-weight: 600;
 
     font-size: 1.4rem;
@@ -226,10 +225,6 @@ export const Table = styled.table`
   @media screen and (max-width: 960px) {
     th {
       padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #000000;
-      color: rgb(255, 255, 255);
     }
     td,
     th {

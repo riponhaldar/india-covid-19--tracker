@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <>
       <div className='footer'>
-        <p>We stand with everyone fighting on the frontlines</p>
+        <p>Together, we fight against COVID-19 </p>
         <ul>
           <a href='https://github.com/riponhaldar'>
             <li>

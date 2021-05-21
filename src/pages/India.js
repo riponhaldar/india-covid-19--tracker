@@ -1,8 +1,8 @@
 import React from 'react'
 import Statewise from '../component/statewise/Statewise'
-import Tryjs from '../component/totalData'
 import styled from 'styled-components'
 import BarChart from '../component/BarChart/BarChat'
+import TotalData from '../component/totalData/TotalData'
 const India = () => {
   return (
     <>
@@ -13,7 +13,7 @@ const India = () => {
           </h1>
         </Name>
 
-        <Tryjs />
+        <TotalData />
         <div className='row'>
           <div className='left '>
             <Statewise />
@@ -35,6 +35,7 @@ export const Name = styled.div`
     color: rgb(90, 90, 90);
     /* margin-top: 2rem; */
     padding-top: 2rem;
+
     span {
       color: blue;
     }

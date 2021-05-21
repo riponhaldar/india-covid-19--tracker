@@ -3,9 +3,37 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: rgba(0, 0, 0, 0.897);
+/* body {
+  background-color: rgba(1, 0, 20, 0.897);
+} */
+
+:root {
+  --blue: rgba(1, 0, 20, 0.897);
+  --white: rgb(255, 255, 255);
 }
+
+body {
+  background: var(--background-color);
+
+  color: var(--text-color);
+  font-weight: var(--font-weight);
+  transition: background 0.3s ease-in-out, color 0.6s ease-in-out;
+}
+
+body.light {
+  --background-color: var(--white);
+  --text-color: var(--blue);
+  --font-weight: 400;
+  /* --image: url('../day.jpg'); */
+}
+
+body.dark {
+  --background-color: var(--blue);
+  --text-color: var(--white);
+  --font-weight: 500;
+  /* --image: url('../night.jpg'); */
+}
+/* darkmood end  */
 .container {
   z-index: 1;
   width: 100%;
@@ -55,7 +83,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(230, 23, 4);
 }
 @media screen and (max-width: 991px) {
   .container {
@@ -71,7 +99,8 @@ a {
   .right {
     border-radius: 10px;
     padding: 0px;
-    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    /* box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.9); */
     margin-top: 0px;
     margin-bottom: 20px;
   }

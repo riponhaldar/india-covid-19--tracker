@@ -3,12 +3,14 @@ import Footer from './component/Footer'
 import Navbar from './component/Navbar/Navbar'
 import World from './pages/Wold'
 import About from './component/About/About'
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from 'react-router-dom'
+
 function App() {
   return (
     <>

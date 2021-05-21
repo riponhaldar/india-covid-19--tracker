@@ -1,0 +1,22 @@
+#darkMode {
+  font-size: 2.5rem;
+
+  padding: 5px;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+
+  transition: background-color 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+#darkMode:hover,
+#darkMode:focus {
+  /* filter: none; */
+  background-color: rgba(1, 0, 20, 0.897);
+  cursor: pointer;
+}
+
+#darkMode.clicked {
+  filter: none !important;
+  background-color: rgba(1, 0, 20, 0.897);
+}

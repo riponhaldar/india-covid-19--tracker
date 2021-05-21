@@ -1,7 +1,7 @@
 import React from 'react'
-import './navbar.css'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import DarkMode from '../Darkmode/DarkMode'
 const Navbar = () => {
   return (
     <>
@@ -9,8 +9,11 @@ const Navbar = () => {
         <h1>
           <em>COVID</em>-19 <span>LIVE </span>
         </h1>
-        <p>API</p>
+        <div>
+          <DarkMode />
+        </div>
       </Logo>
+
       <Nav>
         <NavMenu>
           <NavItem>
@@ -37,19 +40,40 @@ const Navbar = () => {
 export default Navbar
 
 export const Logo = styled.div`
-  text-align: center;
-  font-size: 1.9rem;
-  color: blue;
-  /* margin-top: 2rem; */
-  padding-top: 2rem;
-  em {
-    color: rgb(90, 90, 90);
+  display: flex;
+  margin: auto;
+  position: relative;
+  justify-content: center;
+  h1 {
+    text-align: center;
+    font-size: 2%.5rem;
+    /* color: blue; */
+    color: #f13c3cc5;
+    /* margin-top: 2rem; */
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+    em {
+      /* color: rgb(90, 90, 90); */
+      color: rgb(139, 140, 209);
+    }
+    span {
+      color: rgb(194, 195, 219);
+    }
   }
-  span {
-    color: red;
+  div {
+    position: absolute;
+    right: 5%;
+    top: 2rem;
   }
   @media screen and (max-width: 960px) {
-    font-size: 1.1rem;
+    h1 {
+      font-size: 1.5rem;
+    }
+    div {
+      position: absolute;
+      right: 5%;
+      top: 1.5rem;
+    }
   }
 `
 export const Nav = styled.nav`
@@ -82,7 +106,7 @@ export const NavLinks = styled(Link)`
   padding: 1rem;
   margin-right: 10px;
   font-size: 1.3rem;
-  color: rgb(90, 90, 90);
+  color: rgb(139, 140, 209);
 
   @media screen and (max-width: 960px) {
     padding-right: 1rem;

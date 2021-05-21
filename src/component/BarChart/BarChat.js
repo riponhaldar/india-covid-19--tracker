@@ -101,7 +101,7 @@ const BarChat = () => {
   return (
     <>
       <div className='chart-container'>
-        <div className='chart1'>
+        <div className='chart'>
           <Line
             data={chartReco}
             // width={400}
@@ -133,7 +133,7 @@ const BarChat = () => {
             }}
           />
         </div>
-        <div className='chart2'>
+        <div className='chart'>
           <Line
             data={chartData}
             // width={400}
@@ -166,7 +166,7 @@ const BarChat = () => {
           />
         </div>
 
-        <div className='chart3'>
+        <div className='chart'>
           <Line
             data={chartDeath}
             // width={400}
