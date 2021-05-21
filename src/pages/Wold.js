@@ -159,14 +159,18 @@ export const Header_row = styled.div`
   }
 `
 export const Covid_case = styled.div`
-  padding: 40px 50px;
+  padding: 50px 30px;
   border-radius: 10px;
   cursor: pointer;
   margin: 10px;
   position: relative;
-  box-shadow: 3px 10px 15px 1px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 3px 10px 15px 1px rgba(0, 0, 0, 0.3); */
   /* background-color: #fff; */
+
   margin-right: 1rem;
+  &:hover {
+    box-shadow: 3px 10px 15px 1px rgba(0, 0, 0, 0.3);
+  }
   p {
     color: rgb(160, 160, 160);
     font-size: 1.4rem;
