@@ -5,7 +5,8 @@ const Footer = () => {
     <>
       <div className='footer'>
         <p>
-          Together, we fight against COVID-19 <br /> ©riponhaldar 2021
+          Together, we fight against COVID-19 <br />
+          riponhaldar 2021
         </p>
         <ul>
           <a href='https://github.com/riponhaldar'>

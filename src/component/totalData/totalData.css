@@ -58,8 +58,8 @@ color: rgb(194, 195, 219); */
 
   .card {
     box-shadow: 3px 10px 15px 1px rgba(0, 0, 0, 0.3);
-    padding: 50px 20px;
-    margin: 10px 4px;
+    padding: 50px 10px;
+    margin: 10px 0px;
   }
   .card h3 {
     font-size: 1.2rem;
@@ -70,7 +70,7 @@ color: rgb(194, 195, 219); */
   }
 }
 
-@media screen and (max-width: 384px) {
+/* @media screen and (max-width: 384px) {
   .flex {
     flex-wrap: wrap;
     padding: 20px 10px;
@@ -85,5 +85,25 @@ color: rgb(194, 195, 219); */
   }
   .card p {
     font-size: 1rem;
+  }
+} */
+
+@media screen and (max-width: 414px) {
+  .flex {
+    flex-wrap: wrap;
+    padding: 10px 0px;
+  }
+
+  .card {
+    padding: 15px 20px;
+    margin: 5px 10px;
+  }
+  .card h3 {
+    font-size: 1rem;
+    padding-bottom: 10px;
+  }
+  .card p {
+    font-size: 1rem;
+    padding-top: 5px;
   }
 }

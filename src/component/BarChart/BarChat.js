@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Line } from 'react-chartjs-2'
+import { Line, Bar } from 'react-chartjs-2'
 import './barchat.css'
 import Loading from '../../Loading'
 // Animation
@@ -26,7 +26,7 @@ const BarChat = () => {
         })
         .then((data) => {
           const chart = data.cases_time_series
-          var chek = chart.slice(1).slice(-7)
+          var chek = chart.slice(1).slice(-100)
 
           for (const data of chek) {
             empDate.push(data.date)
@@ -39,7 +39,7 @@ const BarChat = () => {
             type: 'bar',
             datasets: [
               {
-                label: 'last 7Days Confrim',
+                label: 'last 100Days Confrim',
                 data: empConf,
                 tension: 0.4,
                 backgroundColor: ['rgb(0, 89, 255)'],
@@ -54,7 +54,7 @@ const BarChat = () => {
             type: 'bar',
             datasets: [
               {
-                label: 'last 7Days Recover',
+                label: 'last 100Days Recover',
                 data: empReco,
                 tension: 0.6,
                 backgroundColor: [' rgb(0, 255, 34)'],
@@ -69,7 +69,7 @@ const BarChat = () => {
             type: 'bar',
             datasets: [
               {
-                label: 'last 7Days Death',
+                label: 'last 100Days Death',
                 data: empDath,
                 borderColor: ['red'],
                 backgroundColor: ['red'],
@@ -104,7 +104,7 @@ const BarChat = () => {
     <>
       <div className='chart-container'>
         <div className='chart'>
-          <Line
+          <Bar
             data={chartData}
             // width={400}
             // height={200}
@@ -137,8 +137,8 @@ const BarChat = () => {
         </div>
 
         <div className='chart'>
-          <Line
-            data={chartReco}
+          <Bar
+            data={chartDeath}
             // width={400}
             // height={200}
             options={{
@@ -170,8 +170,8 @@ const BarChat = () => {
         </div>
 
         <div className='chart'>
-          <Line
-            data={chartDeath}
+          <Bar
+            data={chartReco}
             // width={400}
             // height={200}
             options={{

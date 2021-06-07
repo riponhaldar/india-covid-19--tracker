@@ -58,7 +58,7 @@ body.dark {
 .right {
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 0px 20px;
 }
 
 .footer p {
@@ -93,19 +93,19 @@ a {
     padding-right: 20px;
     padding-left: 20px;
   }
+
   .row {
-    margin-top: 3rem;
+    margin-top: 1rem;
     width: 100%;
     flex-wrap: wrap;
     flex-direction: column-reverse;
   }
   .right {
     border-radius: 10px;
-    padding: 0px;
+    padding: 0px 0px;
     width: 100%;
-    /* box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.9); */
     margin-top: 0px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 
   .left {

@@ -3,6 +3,7 @@ import Statewise from '../component/statewise/Statewise'
 import styled from 'styled-components'
 import BarChart from '../component/BarChart/BarChat'
 import TotalData from '../component/totalData/TotalData'
+import PastData from '../component/PastData/PastData'
 const India = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const India = () => {
         </Name>
 
         <TotalData />
+        <PastData />
         <div className='row'>
           <div className='left '>
             <Statewise />
